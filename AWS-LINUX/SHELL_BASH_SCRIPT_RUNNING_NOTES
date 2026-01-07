@@ -344,3 +344,170 @@ unset name
 
 echo "printing variable: $name"  # Output: (nothing, the variable is unset)
 
+
+===========================================================
+
+DATE: 7 JAN 26
+================================================================
+CONDITIONAL EXPRESSION : 
+
+
+if [ condition1 ]; then
+                    # Code to execute if condition is true
+    echo "Condition is true"
+	 
+elif [condition2 ]; then	
+	echo "Condition is true"
+	
+elif [condition3 ]; then	
+	echo "Condition is true"	
+	
+else
+                    # Code to execute if condition is false
+    echo "Condition is false"
+		
+fi
+
+==========================================
+ cat person.sh
+
+
+#!/bin/bash
+
+#echo "Enter the persons age"
+
+#read age
+age=$1
+
+if [ "$age" -gt 18 ];  then
+
+        echo " The person is a Major"
+
+elif [ "$age" -lt 18 ]; then
+
+        echo "The person is Minor"
+
+else
+      echo "The person age is exactly 18 , person is a Major"
+
+fi
+=================================================
+=========
+
+#!/bin/bash
+
+echo "enter number"
+read num1
+
+if [ "$num1" -gt 10 ]; then
+        echo "$num1 is greater than 10"
+		
+elif [ "$num1" -lt 10 ]; then
+        echo "$num1 is less than 10"
+
+else
+        echo "$num1 is 10"
+
+fi
+
+=========================
+
+#!/bin/bash
+
+number=7
+
+if [ "$number" -gt 10 ]; then
+    echo "The number is greater than 10."
+	
+elif [ "$number" -eq 10 ]; then
+    echo "The number is exactly 10."
+	
+else
+    echo "The number is less than 10."
+fi
+
+=================
+LOOPS IN SHELL:
+
+FOR LOOP 
+WHILE LOOP
+UNTIL LOOP
+
+
+cat forloop.sh
+
+
+#!/bin/bash
+
+for i in {100..1}
+
+do
+     echo "The number is $i"
+done
+
+==================================================
+
+cat whileloop.sh
+
+
+#!/bin/bash
+
+i=1
+
+
+while [ "$i" -le 100  ];
+do
+    echo "the number is: $i"
+
+    i=$((i + 1 ))
+
+done
+
+=======================================================
+cat rev_while.sh
+
+
+#!/bin/bash
+
+i=100
+
+
+while [ "$i" -ge 1 ];
+do
+    echo "the number is: $i"
+
+    i=$((i - 1 ))
+
+done
+
+=====================================================
+ cat untilloop.sh
+
+
+#!/bin/bash
+
+i=1
+
+until [ "$i" -gt 100  ];
+do
+        echo "the number is : $i"
+        i=$((i + 1))
+
+done
+
+======================================================
+ cat rev_until.sh
+
+
+#!/bin/bash
+
+i=10
+
+until [ "$i" -lt 1 ];
+do
+        echo "the number is : $i"
+        i=$((i - 1))
+
+
+
+
