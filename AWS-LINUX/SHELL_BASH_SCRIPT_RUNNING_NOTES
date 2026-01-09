@@ -845,6 +845,126 @@ PATH=/home/ec2-user/.local/bin:/home/ec2-user/bin:/usr/local/bin:/usr/bin:/usr/l
 
 
 
+==================================
+
+
+
+DATE: 9 JAN 25 
+
+
+FUNCTIONS : 
+ A shell function is a way to group commands to perform a specific task, which can be reused in a shell script or terminal session. It is similar to functions in programming languages.
+  
+  
+  function_name () {
+    command1
+    command2
+    ...
+  }
+
+  function function_name {
+    command1
+    command2
+    ...
+  }
+=============================================================
+greet.sh: 
+
+
+#!/bin/bash
+
+
+greet()
+{
+echo "Hello $1 , Welcome to AWS DevOps Training , Bright future is assured provided you workhard"
+
+}
+
+
+
+greet Madhu 
+greet Ramni
+greet Suma
+greet Aditya
+
+======================================================
+sum.sh
+
+#!/bin/bash
+add_numbers()
+{
+num1=$1
+num2=$2
+
+sum=$(( num1 + num2 ))
+echo "THE SUM OF TWO $1 & $2  NUMEBRS = $sum"
+
+}
+
+add_numbers 5 10
+add_numbers 10 15
+add_numbers 30 40
+
+============================================
+sum2.sh:
+
+#!/bin/bash
+add_numbers()
+{
+
+sum=$(( $1 + $2 ))
+echo "THE SUM OF TWO $1 & $2  NUMEBRS = $sum"
+
+}
+
+add_numbers 5 10
+add_numbers 10 15
+
+==========================
+
+Few realtime project scenarios: (Go through pdf ) 
+
+
+cpu:
+top -bn1 | grep "Cpu(s)" | awk -F" " '{print $2 + $3 + $4}'
+
+
+memory:
+ free | grep Mem | awk -F" " '{print $3/$2 * 100.0}'
+
+
+disk:
+ df -h / | tail -1 | awk -F" " '{print $5 }' | sed 's/%//'
+
+
+================
+
+find /opt/tomcat/logs -name *.log -type f
+
+find /var/log/app/ -name "*.log" -mtime +7 -exec gzip {} \;
+
+
+
+-exec gzip {} \;
+
+
+
+=================
+
+DEPLOYMENT :
+
+CODE (git ) --> deploy on to the env -- service strat
+
+systemctl start/restart/status/stop servicename
+
+
+
+===========
+echo " myname is madhu " >  madhu.txt
+
+==========
+tail -100f /app/xyz.log
+
 
 
 
